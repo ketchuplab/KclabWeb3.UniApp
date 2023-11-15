@@ -1,0 +1,83 @@
+{
+	"pages": [ //pages陣列中第一項表示應用啟動頁，參考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/start/index",
+			"style": {
+				"navigationBarTitleText": "Start App",
+				"app-plus": {
+					// H5下不展示頭部導航
+					//#ifdef H5
+					"titleNView": false
+					//#endif
+				}
+			}
+		}, {
+			"path": "pages/login/index",
+			"style": {
+				"navigationBarTitleText": "Log In",
+				"app-plus": {
+					//#ifdef H5
+					"titleNView": false
+					//#endif
+				},
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/register/index",
+			"style": {
+				"navigationBarTitleText": "Sign Up",
+				"app-plus": {
+					//#ifdef H5
+					"titleNView": false
+					//#endif
+				},
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/wallet/index",
+			"style": {
+				"navigationBarTitleText": "Wallet",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					//#ifdef H5
+					"titleNView": false
+					//#endif
+				}
+			}
+		}, {
+			"path": "pages/forgot/index",
+			"style": {
+				"navigationBarTitleText": "Forgot your password",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/settings/index",
+			"style": {
+				"navigationBarTitleText": "Settings",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/about/index",
+			"style": {
+				"navigationBarTitleText": "About",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/home/index",
+			"style": {
+				"navigationBarTitleText": "Home",
+				"enablePullDownRefresh": false
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#fff",
+		"backgroundColor": "#fff"
+	},
+	"uniIdRouter": {}
+}
