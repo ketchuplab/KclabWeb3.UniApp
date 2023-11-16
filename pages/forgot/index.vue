@@ -43,7 +43,8 @@
 		},
 		methods: {
 			onConfirm() {
-				// console.log('onRegister');
+				// 校驗資料
+				console.log('onRegister');
 				if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.email) == false) {
 					uni.showToast({
 						title: 'Please enter the correct email address.',
@@ -84,6 +85,7 @@
 				}
 			},
 			postChangePassword() {
+				// 重置密碼請求
 				uni.showLoading({
 					title: 'Resetting password...'
 				});
@@ -112,7 +114,8 @@
 				});
 			},
 			onSendEmail() {
-				// console.log('onSendEmail');
+				// 傳送郵件
+				console.log('onSendEmail');
 				if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.email) == false) {
 					uni.showToast({
 						title: 'Please enter the correct email address.',
@@ -125,7 +128,8 @@
 				}
 			},
 			postEmail() {
-				// console.log('postEmail');
+				// 傳送郵件請求
+				console.log('postEmail');
 				uni.showLoading({
 					title: 'Sending a verification code email....'
 				});

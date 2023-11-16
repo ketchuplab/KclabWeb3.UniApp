@@ -1,7 +1,7 @@
 /*
 相關配置
 */
-const config = {
+export const config = {
 	// 開發環境API
 	baseUrl: '/api',
 	// 線上環境API

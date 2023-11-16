@@ -29,7 +29,8 @@
 		},
 		methods: {
 			onRegister() {
-				// console.log('onRegister');
+				// 去註冊
+				console.log('onRegister');
 				if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.email) == false) {
 					uni.showToast({
 						title: 'Please enter the correct email address.',
@@ -63,18 +64,21 @@
 				}
 			},
 			onLogin() {
-				// console.log('onLogin');
+				// 去登入
+				console.log('onLogin');
 				uni.redirectTo({
 					url: '/pages/login/index'
 				});
 			},
 			onForgot() {
-				// console.log('onForgot');
+				// 找回密碼
+				console.log('onForgot');
 				uni.navigateTo({
 					url: '/pages/forgot/index'
 				});
 			},
 			getRegister() {
+				// 請求註冊資料
 				uni.showLoading({
 					title: 'Registration underway....'
 				});

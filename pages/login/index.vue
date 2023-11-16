@@ -30,13 +30,15 @@
 		},
 		methods: {
 			onRegister() {
-				// console.log('onRegister');
+				// 去註冊
+				console.log('onRegister');
 				uni.redirectTo({
 					url: '/pages/register/index'
 				});
 			},
 			onLogin() {
-				// console.log('onLogin');
+				// 去登入
+				console.log('onLogin');
 				if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.email) == false) {
 					uni.showToast({
 						title: 'Please enter the correct email address.',
@@ -56,11 +58,11 @@
 				}
 			},
 			onLoginOut() {
+				// 退出登入
 				try {
 					uni.clearStorage();
 					window.Android.aosUserLogout();
 				} catch (e) {
-					//TODO handle the exception
 					LogReport({
 						type: 'error',
 						logInfo: `log=>[${e}],track=>[page=>${this.$route.path} | function=>window.Android.aosUserLogout]`,
@@ -68,12 +70,14 @@
 				}
 			},
 			onForgot() {
-				// console.log('onForgot');
+				// 找回密碼
+				console.log('onForgot');
 				uni.navigateTo({
 					url: '/pages/forgot/index'
 				});
 			},
 			getLogin() {
+				// 請求登入資料
 				uni.showLoading({
 					title: 'Log in...'
 				});
@@ -88,12 +92,11 @@
 					}
 				}).then(res => {
 					if (res.code === 0) {
-						// console.log('getLogin=>token=>', res.data);
+						console.log('getLogin=>token=>', res.data);
 						try {
 							uni.setStorageSync("token", res.data);
 							window.Android.aosSetUserToken(res.data);
 						} catch (e) {
-							//TODO handle the exception
 							LogReport({
 								type: 'error',
 								logInfo: `log=>[${e}],track=>[page=>${this.$route.path} | function=>window.Android.aosSetUserToken]`,

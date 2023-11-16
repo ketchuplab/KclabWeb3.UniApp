@@ -35,27 +35,33 @@
 		},
 		methods: {
 			onGoSettings() {
+				// 跳轉到設置
 				uni.navigateTo({
 					url: '/pages/settings/index'
 				});
 			},
 			onGoAbout() {
+				// 跳轉到關於
 				uni.navigateTo({
 					url: '/pages/about/index'
 				});
 			},
 			onCopy() {
-				// console.log('onCopy');
+				// 複製錢包地址
+				console.log('onCopy');
 				this.copyToClipboard(this.walletAddress);
 			},
 			onLogout() {
-				// console.log('onLogout');
+				// 退出登錄
+				console.log('onLogout');
 				this.toLogout();
 			},
 			toLogout() {
+				// 通過接口請求退出登錄
 				this.getOut();
 			},
 			copyToClipboard(copyText) {
+				// 複製到粘貼板
 				uni.setClipboardData({
 					data: copyText,
 					success() {
@@ -75,6 +81,7 @@
 				});
 			},
 			getUser() {
+				// 獲取用戶資料
 				let that = this;
 				let api = "/User/getUserBasicInfo";
 				this.$http.get({
@@ -94,6 +101,7 @@
 				});
 			},
 			getOut() {
+				// 退出登錄請求
 				let that = this;
 				let api = "/Login/gemLogout";
 				this.$http.get({
@@ -127,78 +135,6 @@
 	$color_main: #e99b3d;
 
 	.app {
-		background: url('@/static/images/bg.jpg') center no-repeat;
-		top: 0;
-		bottom: 0;
-		right: 0;
-		left: 0;
-		position: absolute;
-		background-size: cover;
-		filter: blur(0rpx);
 
-		.wallet {
-			width: 92%;
-			background: rgba(0, 0, 0, 0.7);
-			border-radius: 30rpx;
-			margin: 100rpx 30rpx;
-			padding: 100rpx 0 100rpx 0;
-
-			.money {
-				text-align: center;
-				height: 100rpx;
-				line-height: 100rpx;
-				font-size: 72rpx;
-				font-weight: lighter;
-				color: $color_main;
-			}
-
-			.point {
-				font-size: 28rpx;
-				padding: 0 20rpx;
-			}
-
-			.address {
-				font-size: 28rpx;
-				height: 80rpx;
-				line-height: 80rpx;
-				color: $color_main;
-				margin-top: 20rpx;
-				text-align: center;
-				cursor: pointer;
-
-				.copy {
-					padding: 30rpx;
-					background: url('@/static/images/copy.png') center no-repeat;
-					background-size: 50%;
-				}
-			}
-		}
-
-		.menus {
-			width: 90%;
-			margin: 0 auto;
-			margin-bottom: 100rpx;
-
-
-			.li {
-				height: 100rpx;
-				line-height: 100rpx;
-				text-align: left;
-				text-indent: 40rpx;
-				font-size: 32rpx;
-				cursor: pointer;
-				background: #fff url('@/static/images/arrow-right.png') 96% center no-repeat;
-				background-size: 6%;
-
-				&:first-child {
-					border-radius: 30rpx 30rpx 0 0;
-					border-bottom: 1rpx solid #eee;
-				}
-
-				&:last-child {
-					border-radius: 0 0 30rpx 30rpx;
-				}
-			}
-		}
 	}
 </style>
