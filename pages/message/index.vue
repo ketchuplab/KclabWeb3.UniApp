@@ -1,10 +1,10 @@
 <template>
 	<view class="app">
 		<view class="page page-white">
-			<view class="home">
-				Home
+			<view class="message">
+				Message
 			</view>
-			<Navbar active='Home'></Navbar>
+			<Navbar active='Message'></Navbar>
 		</view>
 	</view>
 </template>
@@ -27,7 +27,7 @@
 	.app {
 		display: block;
 
-		.home {
+		.message {
 			padding: 60rpx 30rpx;
 		}
 	}

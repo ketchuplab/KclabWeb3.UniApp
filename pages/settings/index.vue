@@ -1,9 +1,15 @@
 <template>
 	<view class="app">
-		<view class="settings">
-			<view class="form">
-				<view class="title">Sound {{volumeState==true?'On':'Off'}}</view>
-				<switch style="transform:scale(0.7)" :checked="volumeState==true?true:false" @change="switchChange" />
+		<view class="page page-web3">
+			<view class="settings">
+				<view class="box">
+					<view class="box-head">Settings 1</view>
+					<view class="box-body">
+						<p>
+							Your Settings 1
+						</p>
+					</view>
+				</view>
 			</view>
 		</view>
 	</view>
@@ -15,54 +21,13 @@
 	} from '@/utils/util.js';
 	export default {
 		data() {
-			return {
-				volumeState: true,
-			}
+			return {}
 		},
 		onShow() {
 			console.log('Settings onShow=>');
-			this.getVolumeState();
 		},
 		methods: {
-			switchChange(e) {
-				// 開關
-				console.log('switchChange=>', e.detail.value);
-				this.volumeState = e.detail.value;
-				this.setVolumeMute(e.detail.value);
-			},
-			setVolumeMute(state) {
-				// 設定音量
-				try {
-					uni.setStorageSync("volume", state);
-					window.Android.aosSetMusicOpen(state);
-				} catch (e) {
-					LogReport({
-						type: 'error',
-						logInfo: `log=>[${e}],track=>[page=>${this.$route.path} | function=>window.Android.aosSetMusicOpen]`,
-					});
-				}
-			},
-			getVolumeState() {
-				// 獲取音量
-				try {
-					let localVolume = uni.getStorageSync('volume');
-					console.log('getVolumeState=>localVolume=>', localVolume);
-					if (localVolume == "") {
-						let bMute = window.Android.aosGetMusicState();
-						console.log('getVolumeState=>', bMute);
-						this.volumeState = bMute;
-					} else {
-						window.Android.aosSetMusicOpen(localVolume);
-						this.volumeState = localVolume;
-					}
-				} catch (e) {
-					LogReport({
-						type: 'error',
-						logInfo: `log=>[${e}],track=>[page=>${this.$route.path} | function=>window.Android.aosGetMusicState]`,
-					});
-				}
-
-			},
+			// 這裡編寫你的設置程式
 		}
 	}
 </script>
@@ -70,5 +35,9 @@
 <style lang="scss">
 	.app {
 		display: block;
+
+		.settings {
+			padding: 60rpx 30rpx;
+		}
 	}
 </style>

@@ -1,16 +1,18 @@
 <template>
 	<view class="app">
-		<view class="title">Sign Up<text class="signup" @click="onLogin">Log In</text></view>
-		<view class="register">
-			<input class="input" type="email" maxlength="32" placeholder="Email" focus inputmode="email"
-				confirm-type="done" v-model="email" />
-			<input class="input" type="password" maxlength="32" placeholder="Password" inputmode="text"
-				confirm-type="done" v-model="password1" />
-			<input class="input" type="password" maxlength="32" placeholder="Confirm Password" inputmode="text"
-				confirm-type="done" v-model="password2" />
-			<view class="btn-register" @click="onRegister">Sign Up</view>
-			<br />
-			<view class="link" @click="onForgot">Forgot your password?</view>
+		<view class="topbar-title">Sign Up<text class="skip" @click="onLogin">Log In</text></view>
+		<view class="page page-white">
+			<view class="register">
+				<input class="input" type="email" maxlength="32" placeholder="Email" focus inputmode="email"
+					confirm-type="done" v-model="email" />
+				<input class="input" type="password" maxlength="32" placeholder="Password" inputmode="text"
+					confirm-type="done" v-model="password1" />
+				<input class="input" type="password" maxlength="32" placeholder="Confirm Password" inputmode="text"
+					confirm-type="done" v-model="password2" />
+				<view class="btn" @click="onRegister">Sign Up</view>
+				<br />
+				<view class="link" @click="onForgot">Forgot your password?</view>
+			</view>
 		</view>
 	</view>
 </template>
@@ -112,9 +114,10 @@
 
 <style lang="scss">
 	.app {
+		display: block;
+
 		.register {
-			text-align: left;
-			padding: 30rpx;
+			padding: 160rpx 30rpx;
 		}
 	}
 </style>

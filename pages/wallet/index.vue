@@ -1,16 +1,20 @@
 <template>
 	<view class="app">
-		<view class="wallet">
-			<view class="money">{{moneyGEM}}<text class="point">gem</text></view>
-			<view class="address">{{showWallet}}<text class="copy" @click="onCopy"></text>
+		<view class="page page-gray">
+			<view class="wallet">
+				<view class="card">
+					<view class="money">{{moneyGEM}}<text class="point">gem</text></view>
+					<view class="address">{{showWallet}}<text class="copy" @click="onCopy"></text>
+					</view>
+				</view>
+				<view class="menus">
+					<view class="li" @click="onGoSettings">Settings</view>
+					<view class="li" @click="onGoAbout">About</view>
+				</view>
+				<view class="btn-sm" @click="onLogout">Log Out</view>
 			</view>
+			<Navbar active='Wallet'></Navbar>
 		</view>
-		<view class="menus">
-			<view class="li" @click="onGoSettings">Settings</view>
-			<view class="li" @click="onGoAbout">About</view>
-		</view>
-		<view class="btn-def" @click="onLogout">Log Out</view>
-		<Navbar active='Wallet'></Navbar>
 	</view>
 </template>
 
@@ -18,7 +22,7 @@
 	import {
 		formatWalletAddress
 	} from "@/utils/util.js";
-	import Navbar from "@/components/Navbar/index.vue"
+	import Navbar from "@/components/Navbar/index.vue";
 	export default {
 		components: {
 			Navbar,
@@ -26,7 +30,7 @@
 		data() {
 			return {
 				moneyGEM: 0.00,
-				showWallet: '',
+				showWallet: 'your wallet *** address',
 				walletAddress: '',
 			};
 		},
@@ -132,9 +136,44 @@
 </script>
 
 <style lang="scss">
-	$color_main: #e99b3d;
-
 	.app {
+		display: block;
 
+		.wallet {
+			padding: 60rpx 30rpx;
+
+			.money {
+				color: #FFF;
+				text-align: center;
+				font-family: Poppins;
+				font-size: 120rpx;
+				font-style: normal;
+				font-weight: 700;
+				letter-spacing: -1.2rpx;
+				text-transform: capitalize;
+				height: 160rpx;
+				line-height: 200rpx;
+
+				.point {
+					font-size: $uni-font-size-base;
+					padding: 0 10rpx;
+				}
+			}
+
+			.address {
+				font-size: $uni-font-size-base;
+				height: 140rpx;
+				line-height: 140rpx;
+				text-align: center;
+
+				.copy {
+					background: url('@/static/images/icon-copy.png') center no-repeat;
+					background-size: 50%;
+					padding: 5px 20px;
+					cursor: pointer;
+				}
+			}
+
+		}
 	}
 </style>

@@ -1,20 +1,9 @@
 <template>
 	<ul class="nav">
-		<li :key="menu.name" :class="menu.name==active?'active':''" v-for="menu in menusList" @click="goPage(menu.url)">
-			<template v-if="menu.name=='Gem'">
-				<div :class="menu.name==active?'home home-chk':'home'">
-					<div class="img">
-						<img :src="menu.name==active?menu.active:menu.icon" />
-					</div>
-					<div class="text">{{menu.name}}</div>
-				</div>
-			</template>
-			<template v-else>
-				<div class="img">
-					<img :src="menu.name==active?menu.active:menu.icon" />
-				</div>
-				<div class="text">{{menu.name}}</div>
-			</template>
+		<li :key="menu.name" v-for="menu in menusList" @click="goPage(menu.url)">
+			<view :class="menu.name==active?'icon active':'icon'">
+				<text :class="menu.icon"></text>
+			</view>
 		</li>
 	</ul>
 </template>
@@ -27,21 +16,18 @@
 		data() {
 			return {
 				menusList: [{
-						name: 'HP',
-						icon: 'static/images/power.png',
-						active: 'static/images/power-chk.png',
-						url: '/pages/energy/index',
+						name: 'Message',
+						icon: 'iconfont icon-message',
+						url: '/pages/message/index',
 					},
 					{
-						name: 'Gem',
-						icon: 'static/images/device.png',
-						active: 'static/images/device.png',
-						url: '/pages/connecting/index',
+						name: 'Home',
+						icon: 'iconfont icon-home',
+						url: '/pages/home/index',
 					},
 					{
 						name: 'Wallet',
-						icon: 'static/images/wallet.png',
-						active: 'static/images/wallet-chk.png',
+						icon: 'iconfont icon-my',
 						url: '/pages/wallet/index',
 					},
 				]
@@ -60,83 +46,57 @@
 </script>
 
 <style lang="scss">
-	$color_main: #e99b3d;
-	$color_li: #cdcdcd;
-	$color_home: #e19a2e;
-	$color_active: #000;
-
 	.nav {
 		position: fixed;
+		z-index: 2;
+		left: 60rpx;
+		bottom: 72rpx;
+		right: 60rpx;
 		height: 120rpx;
 		line-height: 120rpx;
-		display: flex;
-		background: #fff;
-		left: 0;
-		right: 0;
-		bottom: 0;
 		list-style: none;
+		flex-shrink: 0;
+		border-radius: 65rpx;
 		padding: 0;
-		margin: 0;
-		z-index: 2;
-		border-top: 1rpx solid $color_main;
+		margin: 0 auto;
+		background: var(--CTA, linear-gradient(89deg, #310BE8 3.08%, #0027FE 35.62%, #8200FF 63.79%, #D703FF 96.33%));
+		display: flex;
 
 		li {
 			width: 33.33%;
 			text-align: center;
 			cursor: pointer;
-			color: $color_li;
+			justify-content: center;
+			align-items: center;
+			display: flex;
 
-			.img {
-				text-align: center;
-				height: 70rpx;
+			.icon {
+				width: 80rpx;
+				height: 80rpx;
+				line-height: 80rpx;
 
-				img {
-					width: 50rpx;
-					height: 50rpx;
+				.iconfont {
+					font-size: 40rpx;
+					color: #fff;
+					background-image: linear-gradient(143deg, #FFF 19.62%, rgba(255, 255, 255, 0.20) 109.73%);
+					-webkit-background-clip: text;
+					-webkit-text-fill-color: transparent;
+					stroke-width: 0.4rpx;
+					stroke: #FFF;
+					filter: drop-shadow(10rpx 10rpx 20rpx rgba(0, 0, 0, 0.10));
+					backdrop-filter: blur(25rpx);
 				}
 			}
 
-			.text {
-				font-size: 28rpx;
-				height: 50rpx;
-				line-height: 50rpx;
-			}
-
-			.home {
-				width: 150rpx;
-				height: 150rpx;
+			.active {
 				border-radius: 50%;
-				margin: 0 auto;
-				margin-top: -50rpx;
-				background: #fffc0;
-				/* fallback for old browsers */
-				background: -webkit-linear-gradient(to top, #fde5c9, rgb(255, 255, 255));
-				/* Chrome 10-25, Safari 5.1-6 */
-				background: linear-gradient(to top, #fde5c9, rgb(255, 255, 255));
-				/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-				color: #f7cc97;
-
-				.img {
-					text-align: center;
-					height: 90rpx;
-
-					img {
-						width: 100rpx;
-						height: 100rpx;
-					}
-
-				}
-			}
-
-			.home-chk {
-				color: $color_main;
-				border: 1rpx solid $color_main;
+				border: 2rpx solid rgba(255, 255, 255, 0.00);
+				background: rgba(255, 255, 255, 0.20);
+				backdrop-filter: blur(25rpx);
+				cursor: default;
 			}
 		}
 
-		.active {
-			color: $color_active;
-			cursor: default;
-		}
+
 	}
 </style>

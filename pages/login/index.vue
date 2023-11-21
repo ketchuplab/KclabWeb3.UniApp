@@ -1,15 +1,18 @@
 <template>
 	<view class="app">
-		<view class="title">Log In<view class="signup" @click="onRegister">Sign Up</view>
+		<view class="topbar-title">Log In<view class="skip" @click="onRegister">Sign Up</view>
 		</view>
-		<view class="login">
-			<input class="input" type="email" maxlength="32" placeholder="Email" inputmode="email" confirm-type="done"
-				focus v-model="email" />
-			<input class="input" type="password" maxlength="32" placeholder="Password" inputmode="text"
-				confirm-type="done" v-model="password" />
-			<view class="btn-login" @click="onLogin">Log In</view>
-			<br />
-			<view class="link" @click="onForgot">Forgot your password?</view>
+		<view class="page page-white">
+			<view class="login">
+				<input class="input" type="email" maxlength="32" placeholder="Email" inputmode="email"
+					confirm-type="done" focus v-model="email" />
+				<input class="input" type="password" maxlength="32" placeholder="Password" inputmode="text"
+					confirm-type="done" v-model="password" />
+				<view class="btn" @click="onLogin">Log In</view>
+				<br />
+				<view class="link" @click="onForgot">Forgot your password?</view>
+			</view>
+			<view class="tips-foot"></view>
 		</view>
 	</view>
 </template>
@@ -124,9 +127,10 @@
 
 <style lang="scss">
 	.app {
+		display: block;
+
 		.login {
-			text-align: left;
-			padding: 30rpx;
+			padding: 160rpx 30rpx;
 		}
 	}
 </style>

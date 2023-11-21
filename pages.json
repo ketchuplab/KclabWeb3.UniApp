@@ -69,13 +69,32 @@
 			"path": "pages/home/index",
 			"style": {
 				"navigationBarTitleText": "Home",
-				"enablePullDownRefresh": false
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					// H5下不展示頭部導航
+					//#ifdef H5
+					"titleNView": false
+					//#endif
+				}
+			}
+		},
+		{
+			"path": "pages/message/index",
+			"style": {
+				"navigationBarTitleText": "Message",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					// H5下不展示頭部導航
+					//#ifdef H5
+					"titleNView": false
+					//#endif
+				}
 			}
 		}
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uni-app",
+		"navigationBarTitleText": "KclabWeb3.UniApp",
 		"navigationBarBackgroundColor": "#fff",
 		"backgroundColor": "#fff"
 	},

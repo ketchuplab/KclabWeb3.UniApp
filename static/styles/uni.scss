@@ -10,7 +10,6 @@
  */
 
 /* 顏色變數 */
-
 /* 行為相關顏色 */
 $uni-color-primary: #007aff;
 $uni-color-success: #4cd964;
@@ -18,37 +17,37 @@ $uni-color-warning: #f0ad4e;
 $uni-color-error: #dd524d;
 
 /* 文字基本顏色 */
-$uni-text-color:#333;//基本色
-$uni-text-color-inverse:#fff;//反色
-$uni-text-color-grey:#999;//輔助灰色，如載入更多的提示資訊
-$uni-text-color-placeholder: #808080;
-$uni-text-color-disable:#c0c0c0;
+$uni-text-color: #000; //基本色
+$uni-text-color-inverse: #fff; //反色
+$uni-text-color-grey: rgba(194, 205, 220, 0.2); //輔助灰色，如載入更多的提示資訊
+$uni-text-color-placeholder: rgba(28, 30, 47, 0.6);
+$uni-text-color-disable: #c0c0c0;
 
 /* 背景顏色 */
-$uni-bg-color:#ffffff;
-$uni-bg-color-grey:#f8f8f8;
-$uni-bg-color-hover:#f1f1f1;//點選狀態顏色
-$uni-bg-color-mask:rgba(0, 0, 0, 0.4);//遮罩顏色
+$uni-bg-color: #ffffff;
+$uni-bg-color-grey: #f8f8f8;
+$uni-bg-color-hover: #f1f1f1; //點選狀態顏色
+$uni-bg-color-mask: rgba(0, 0, 0, 0.4); //遮罩顏色
 
 /* 邊框顏色 */
-$uni-border-color:#c8c7cc;
+$uni-border-color: rgba(194, 205, 220, 0.30);
 
 /* 尺寸變數 */
 
 /* 文字尺寸 */
-$uni-font-size-sm:12px;
-$uni-font-size-base:14px;
-$uni-font-size-lg:16;
+$uni-font-size-sm: 24rpx;
+$uni-font-size-base: 28rpx;
+$uni-font-size-lg: 32rpx;
 
 /* 圖片尺寸 */
-$uni-img-size-sm:20px;
-$uni-img-size-base:26px;
-$uni-img-size-lg:40px;
+$uni-img-size-sm: 20px;
+$uni-img-size-base: 26px;
+$uni-img-size-lg: 40px;
 
 /* Border Radius */
-$uni-border-radius-sm: 2px;
-$uni-border-radius-base: 3px;
-$uni-border-radius-lg: 6px;
+$uni-border-radius-sm: 10rpx;
+$uni-border-radius-base: 40rpx;
+$uni-border-radius-lg: 65rpx;
 $uni-border-radius-circle: 50%;
 
 /* 水平間距 */
@@ -66,8 +65,8 @@ $uni-opacity-disabled: 0.3; // 元件禁用態的透明度
 
 /* 文章場景相關 */
 $uni-color-title: #2C405A; // 文章標題顏色
-$uni-font-size-title:20px;
+$uni-font-size-title: 20px;
 $uni-color-subtitle: #555555; // 二級標題顏色
-$uni-font-size-subtitle:26px;
+$uni-font-size-subtitle: 26px;
 $uni-color-paragraph: #3F536E; // 文章段落顏色
-$uni-font-size-paragraph:15px;
+$uni-font-size-paragraph: 15px;

@@ -1,27 +1,29 @@
 <template>
 	<view class="app">
-		<view class="forget">
-			<view class="step1" v-if="step=='step1'">
-				<view class="remark">
-					If you've forgotten your password, please fill in the email associated with your account. We
-					will send a verification code to your email to ensure you are the legitimate owner of the
-					account.
+		<view class="page page-white">
+			<view class="forget">
+				<view class="step1" v-if="step=='step1'">
+					<view class="remark">
+						If you've forgotten your password, please fill in the email associated with your account. We
+						will send a verification code to your email to ensure you are the legitimate owner of the
+						account.
+					</view>
+					<br />
+					<input class="input" type="email" maxlength="32" placeholder="Email" focus inputmode="email"
+						confirm-type="done" v-model="email" />
+					<view class="btn-sm" @click="onSendEmail">Send Again</view>
 				</view>
-				<br />
-				<input class="input" type="email" maxlength="32" placeholder="Email" focus inputmode="email"
-					confirm-type="done" v-model="email" />
-				<view class="send" @click="onSendEmail">Send Again</view>
-			</view>
-			<view class="step2" v-if="step=='step2'">
-				<input class="input" type="email" maxlength="32" placeholder="Email" disabled="true" inputmode="email"
-					confirm-type="done" v-model="email" />
-				<input class="input" type="text" maxlength="4" placeholder="Verification code" inputmode="text"
-					confirm-type="done" v-model="code" />
-				<input class="input" type="password" maxlength="32" placeholder="Password" inputmode="text"
-					confirm-type="done" v-model="password1" />
-				<input class="input" type="password" maxlength="32" placeholder="Confirm Password" inputmode="text"
-					confirm-type="done" v-model="password2" />
-				<view class="btn-def" @click="onConfirm">Confirm</view>
+				<view class="step2" v-if="step=='step2'">
+					<input class="input" type="email" maxlength="32" placeholder="Email" disabled="true"
+						inputmode="email" confirm-type="done" v-model="email" />
+					<input class="input" type="text" maxlength="4" placeholder="Verification code" inputmode="text"
+						confirm-type="done" v-model="code" />
+					<input class="input" type="password" maxlength="32" placeholder="Password" inputmode="text"
+						confirm-type="done" v-model="password1" />
+					<input class="input" type="password" maxlength="32" placeholder="Confirm Password" inputmode="text"
+						confirm-type="done" v-model="password2" />
+					<view class="btn-sm" @click="onConfirm">Confirm</view>
+				</view>
 			</view>
 		</view>
 	</view>
@@ -164,9 +166,9 @@
 </script>
 
 <style lang="scss">
-	$color_main: #e99b3d;
-
 	.app {
+		display: block;
+
 		.forget {
 			text-align: left;
 			padding: 30rpx;
@@ -175,25 +177,10 @@
 				display: block;
 
 				.remark {
-					color: $color_main;
-					font-size: 32rpx;
+					color: $uni-text-color;
+					font-size: $uni-font-size-lg;
 					font-weight: lighter;
-					background: #fff;
 					padding: 30rpx;
-					border-radius: 30rpx;
-				}
-
-				.send {
-					text-align: center;
-					font-size: 32rpx;
-					background: #000;
-					width: 50%;
-					margin: 0 auto;
-					padding: 20rpx;
-					border-radius: 25rpx;
-					margin-top: 30rpx;
-					color: #fff;
-					cursor: pointer;
 				}
 			}
 
