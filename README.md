@@ -69,6 +69,11 @@
 └—— uni.promisify.adaptor.js （Promise適配器 ）
 
 ```
+## 開源說明
+
+|Android端|iOS端|Web端|H5端|后端|
+|--|--|--|--|--|
+|可定制|可定制|可定制|[开源](https://github.com/ketchuplab/KclabWeb3.UniApp.git)|可定制|
 
 ## 特別說明
 
