@@ -22,7 +22,7 @@
 		onShow() {
 			this.appName = config.appName;
 			this.appDesc = config.appDesc;
-			this.getAppConfig();
+			// this.getAppConfig();
 		},
 		methods: {
 			onGo() {

@@ -6,7 +6,7 @@
 					<view class="box-head">Settings 1</view>
 					<view class="box-body">
 						<p>
-							Your Settings 1
+							Your Settings 1 code！
 						</p>
 					</view>
 				</view>

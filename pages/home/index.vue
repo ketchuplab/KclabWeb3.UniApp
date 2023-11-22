@@ -2,7 +2,7 @@
 	<view class="app">
 		<view class="page page-white">
 			<view class="home">
-				Home
+				Your home page code！
 			</view>
 			<Navbar active='Home'></Navbar>
 		</view>

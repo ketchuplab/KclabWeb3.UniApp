@@ -92,15 +92,15 @@
 					title: 'Resetting password...'
 				});
 				let api = "/user/resetPassword";
-				this.$http.post({
-					api,
-					params: {
-						email: this.email,
-						resetCode: this.code,
-						password: this.password1,
-					}
-				}).then(res => {
-					if (res.code === 0) {
+				// this.$http.post({
+				// 	api,
+				// 	params: {
+				// 		email: this.email,
+				// 		resetCode: this.code,
+				// 		password: this.password1,
+				// 	}
+				// }).then(res => {
+				// 	if (res.code === 0) {
 						uni.hideLoading();
 						uni.showToast({
 							title: 'Succeeded in resetting the password.',
@@ -112,8 +112,8 @@
 								url: '/pages/login/index'
 							});
 						}, 500);
-					}
-				});
+				// 	}
+				// });
 			},
 			onSendEmail() {
 				// 傳送郵件
@@ -136,30 +136,30 @@
 					title: 'Sending a verification code email....'
 				});
 				let api = "/user/sendResetCode";
-				this.$http.post({
-					api,
-					params: {
-						email: this.email,
-					}
-				}).then(res => {
-					if (res.code === 0) {
+				// this.$http.post({
+				// 	api,
+				// 	params: {
+				// 		email: this.email,
+				// 	}
+				// }).then(res => {
+				// 	if (res.code === 0) {
 						uni.hideLoading();
-						if (res.data == true) {
+				// 		if (res.data == true) {
 							this.step = 'step2';
 							uni.showToast({
 								title: 'Sending the email successfully...',
 								icon: 'none',
 								duration: 2000
 							});
-						} else {
-							uni.showToast({
-								title: res.msg,
-								icon: 'none',
-								duration: 2000
-							});
-						}
-					}
-				});
+				// 		} else {
+				// 			uni.showToast({
+				// 				title: res.msg,
+				// 				icon: 'none',
+				// 				duration: 2000
+				// 			});
+				// 		}
+				// 	}
+				// });
 			},
 		}
 	}

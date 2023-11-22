@@ -24,8 +24,8 @@
 	export default {
 		data() {
 			return {
-				email: '',
-				password: '',
+				email: 'guest@email.com',
+				password: '123456',
 			};
 		},
 		onShow() {
@@ -86,40 +86,40 @@
 				});
 				let that = this;
 				let api = "/Login/gemLogin";
-				this.$http.noTonkenGet({
-					api,
-					params: {
-						email: this.email,
-						password: this.password,
-						act: 0,
-					}
-				}).then(res => {
-					if (res.code === 0) {
-						console.log('getLogin=>token=>', res.data);
-						try {
-							uni.setStorageSync("token", res.data);
-							window.Android.aosSetUserToken(res.data);
-						} catch (e) {
-							LogReport({
-								type: 'error',
-								logInfo: `log=>[${e}],track=>[page=>${this.$route.path} | function=>window.Android.aosSetUserToken]`,
-							});
-						}
+				// this.$http.noTonkenGet({
+				// 	api,
+				// 	params: {
+				// 		email: this.email,
+				// 		password: this.password,
+				// 		act: 0,
+				// 	}
+				// }).then(res => {
+				// 	if (res.code === 0) {
+				// 		console.log('getLogin=>token=>', res.data);
+				// 		try {
+				// 			uni.setStorageSync("token", res.data);
+				// 			window.Android.aosSetUserToken(res.data);
+				// 		} catch (e) {
+				// 			LogReport({
+				// 				type: 'error',
+				// 				logInfo: `log=>[${e}],track=>[page=>${this.$route.path} | function=>window.Android.aosSetUserToken]`,
+				// 			});
+				// 		}
 						setTimeout(() => {
 							uni.hideLoading();
 							uni.reLaunch({
-								url: '/pages/connecting/index'
+								url: '/pages/home/index'
 							});
 						}, 2000);
-					} else {
-						uni.setStorageSync("token", '');
-						uni.showToast({
-							title: res.msg,
-							duration: 2000,
-							icon: 'none'
-						})
-					}
-				});
+				// 	} else {
+				// 		uni.setStorageSync("token", '');
+				// 		uni.showToast({
+				// 			title: res.msg,
+				// 			duration: 2000,
+				// 			icon: 'none'
+				// 		})
+				// 	}
+				// });
 			},
 		}
 	}

@@ -2,7 +2,7 @@
 	<view class="app">
 		<view class="page page-white">
 			<view class="message">
-				Message
+				Your message page code!
 			</view>
 			<Navbar active='Message'></Navbar>
 		</view>

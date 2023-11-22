@@ -84,16 +84,16 @@
 				uni.showLoading({
 					title: 'Registration underway....'
 				});
-				let api = "/Login/gemLogin";
-				this.$http.post({
-					api,
-					params: {
-						email: this.email,
-						password: this.password1,
-						act: 1,
-					}
-				}).then(res => {
-					if (res.code === 0) {
+				// let api = "/Login/gemLogin";
+				// this.$http.post({
+				// 	api,
+				// 	params: {
+				// 		email: this.email,
+				// 		password: this.password1,
+				// 		act: 1,
+				// 	}
+				// }).then(res => {
+				// 	if (res.code === 0) {
 						uni.hideLoading();
 						uni.showToast({
 							title: 'Registered successfully',
@@ -105,8 +105,8 @@
 								url: '/pages/login/index'
 							});
 						}, 500);
-					}
-				});
+				// 	}
+				// });
 			},
 		}
 	}

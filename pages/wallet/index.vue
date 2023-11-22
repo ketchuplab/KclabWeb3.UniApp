@@ -35,7 +35,7 @@
 			};
 		},
 		onShow() {
-			this.getUser();
+			// this.getUser();
 		},
 		methods: {
 			onGoSettings() {
@@ -58,10 +58,6 @@
 			onLogout() {
 				// 退出登錄
 				console.log('onLogout');
-				this.toLogout();
-			},
-			toLogout() {
-				// 通過接口請求退出登錄
 				this.getOut();
 			},
 			copyToClipboard(copyText) {
@@ -108,10 +104,10 @@
 				// 退出登錄請求
 				let that = this;
 				let api = "/Login/gemLogout";
-				this.$http.get({
-					api,
-				}).then(res => {
-					if (res.code === 0) {
+				// this.$http.get({
+				// 	api,
+				// }).then(res => {
+				// 	if (res.code === 0) {
 						uni.showToast({
 							title: 'Logout successfully',
 							icon: "none",
@@ -122,14 +118,14 @@
 								url: '/pages/login/index'
 							});
 						}, 500);
-					} else {
-						uni.showToast({
-							title: res.msg,
-							duration: 2000,
-							icon: 'none'
-						});
-					}
-				});
+				// 	} else {
+				// 		uni.showToast({
+				// 			title: res.msg,
+				// 			duration: 2000,
+				// 			icon: 'none'
+				// 		});
+				// 	}
+				// });
 			},
 		}
 	}
