@@ -10,13 +10,10 @@
 
 ## 效果預覽
 
-```html
 訪問網址：https://ketchuplab.github.io/KclabWeb3.UniApp/
-```
 
-```
 預覽效果：[KclabWeb3.UniApp](https://ketchuplab.github.io/KclabWeb3.UniApp/)
-```
+
 
 ## 目錄說明
 
