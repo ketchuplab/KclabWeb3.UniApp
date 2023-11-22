@@ -64,7 +64,7 @@
 
 ## 聯繫我們
 
-網址：[https://www.kclab.xyz](https://www.kclab.xyz)
+網址：[https://kclab.xyz](https://kclab.xyz)
 
 Twiiter：[https://twitter.com/ketchupRepublic](https://twitter.com/ketchupRepublic)
 
